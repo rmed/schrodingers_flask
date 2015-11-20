@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}Superform{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Schrödinger's Flask</h1>
+
+    <hr/>
+
+    <form method="POST" action="{{ url_for('superform') }}">
+        <label for="name">Name</label>
+        <input type="text" name="name" value=""/>
+
+        <input type="submit" value="Go!"/>
+    </form>
+
+    {% if name is defined %}
+        <h2>Name: {{ name }}</h2>
+    {% else %}
+        <h2>No name specified</h2>
+    {% endif %}
+
+</div>
+
+{% endblock %}

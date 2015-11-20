@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% from "_macros.html" import show_data, addition, show_people %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Schrödinger's Flask</h1>
+    <hr/>
+
+    {{ show_data(data) }}
+
+    <hr/>
+
+    {{ addition(data, 0, 2) }}
+
+    <hr/>
+
+    {{ show_people(people) }}
+</div>
+
+{% endblock %}

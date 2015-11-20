@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Schrödinger's Flask</h1>
+    <hr/>
+
+    <h2>Data</h2>
+    {# Iterate the data #}
+    {% for d in data %}
+
+        <div class="row">
+            <div class="twelve columns">
+                {{ d }}
+            </div>
+        </div>
+
+    {% endfor %}
+
+    <hr/>
+
+    <h2>Addition</h2>
+    {# Addition of some elements #}
+        <div class="row">
+            <div class="five columns">
+                <p>data[0] = {{ data[0] }}</p>
+                <p>+</p>
+                <p>data[1] = {{ data[1] }}</p>
+            </div>
+
+            <div class="one column">
+                =
+            </div>
+
+            <div class="six columns">
+                {{ data[0] + data[1] }}
+            </div>
+        </div>
+
+    <hr/>
+
+    <h2>People (present)</h2>
+    {# Iterate the people #}
+    {% for p in people %}
+
+        {% if p.present %}
+
+            <div class="row">
+                <div class="twelve columns">
+                    <b>{{ p.name }}</b>
+                </div>
+            </div>
+
+        {% endif %}
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

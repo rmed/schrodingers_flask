@@ -13,5 +13,10 @@ def index():
 def echo(word):
     return 'You said: %s' % word
 
+# dot what?
+@app.route('/myapp.java')
+def wut():
+    return 'No java for you!'
+
 if __name__ == '__main__':
     app.run()

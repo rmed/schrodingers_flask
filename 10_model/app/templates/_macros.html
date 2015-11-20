@@ -1,0 +1,54 @@
+{% macro show_data(data) %}
+    <h2>Data</h2>
+
+    {# Iterate the data #}
+    {% for d in data %}
+
+        <div class="row">
+            <div class="twelve columns">
+                {{ d }}
+            </div>
+        </div>
+
+    {% endfor %}
+{% endmacro %}
+
+{% macro addition(data, index0, index1) %}
+    <h2>Addition</h2>
+
+    {# Addition of some elements #}
+    <div class="row">
+        <div class="five columns">
+            <p>data[{{ index0 }}] = {{ data[index0] }}</p>
+            <p>+</p>
+            <p>data[{{ index1 }}] = {{ data[index1] }}</p>
+        </div>
+
+        <div class="one column">
+            =
+        </div>
+
+        <div class="six columns">
+            {{ data[index0] + data[index1] }}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro show_people(people) %}
+    <h2>People (present)</h2>
+
+    {# Iterate the people #}
+    {% for p in people %}
+
+        {% if p.present %}
+
+            <div class="row">
+                <div class="twelve columns">
+                    <b>{{ p.name }}</b>
+                </div>
+            </div>
+
+        {% endif %}
+
+    {% endfor %}
+{% endmacro %}
