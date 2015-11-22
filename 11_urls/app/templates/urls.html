@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}URL examples{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Schrödinger's Flask</h1>
+
+    <hr/>
+
+    <img src="{{ url_for('static', filename='img/smash.gif') }}"></img>
+
+    <h2>Links</h2>
+
+    <ul>
+        <li><a href="{{ url_for('superform') }}">Superform</a></li>
+        <li><a href="{{ url_for('superecho', word='omgardilla') }}">Superecho (omgardilla)</a></li>
+    </ul>
+
+</div>
+
+{% endblock %}
