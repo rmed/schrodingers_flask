@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}Nyanter | Nyanboard{% endblock %}
+
+{% block content %}
+
+    <h1>Nyanboard</h1>
+
+    <hr/>
+        {# Show nyas #}
+            <article class="row nya-card">
+                <div class="one column">
+                    <img class="nya-pic" src="" alt="user picture">
+                </div>
+
+                <div class="eleven columns">
+                    {% with uname = nya.author.username %}
+                        <a class="uname" href="">
+                            {{ nya.author.username }}
+                        </a>
+                    {% endwith %}
+
+                    <span class="date">{{ nya.timestamp.strftime('%H:%M:%S %d-%m-%Y') }}</span>
+                    <p class="message">{{ nya.message }}</p>
+                </div>
+            </article>
+
+        <div class="row">
+            <div class="twelve rows">
+                {% if page > 1 %}
+                    <a class="u-pull-left pagination-ctrl" href="{{ url_for('board.nyanboard', page=(page - 1) )}}">
+                        <i class="glyph-left"></i> Previous page
+                    </a>
+                {% endif %}
+
+                {% if page < pagination.get_page_count() %}
+                    <a class="u-pull-right pagination-ctrl" href="{{ url_for('board.nyanboard', page=(page + 1) )}}">
+                        Next page <i class="glyph-right"></i>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}Nyanter | Signup{% endblock %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="row">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    {# Multipart for image #}
+    <form name="edit_form" enctype=multipart/form-data>
+        <div class="row">
+            <div class="two columns">
+                <label for="username"><i class="glyph-user"></i> Username</label>
+            </div>
+
+            <div class="ten columns">
+                <input id="username" class="u-full-width" type="text" required value="{{ user.username }}" name="username"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="two columns">
+                <label for="email"><i class="glyph-mail"></i> Email address</label>
+            </div>
+
+            <div class="ten columns">
+                <input id="email" class="u-full-width" type="email" required value="{{ user.email }}" name="email"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="two columns">
+                <label for="password"><i class="glyph-lock"></i> Password</label>
+            </div>
+
+            <div class="ten columns">
+                <input id="password" class="u-full-width" type="password" required value="" name="password"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="two columns">
+                <label for="pic"><i class="glyph-picture"></i> Profile picture</label>
+            </div>
+
+            <div class="ten columns">
+                <input id="pic" class="u-full-width" type="file" name="pic" accept="image/png">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="six columns offset-by-three">
+                <input id="submit" class="button button-primary u-full-width" type="submit" name="submit" value="Save"/>
+            </div>
+        </div>
+    </form>
+{% endblock %}

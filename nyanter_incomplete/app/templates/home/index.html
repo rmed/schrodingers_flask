@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Welcome to Nyanter!</h1>
+    <hr/>
+
+    <div class="row">
+        <div class="four columns info-card">
+            <h3><i class="glyph-chat"></i> Share</h3>
+            <p>Share what you want with the world, express yourself</p>
+        </div>
+
+        <div class="four columns info-card">
+            <h3><i class="glyph-user-add"></i> Meet</h3>
+            <p>Meet people with similar interests</p>
+        </div>
+
+        <div class="four columns info-card">
+            <h3><i class="glyph-users"></i> Friends</h3>
+            <p>Gather your friends and stay up-to-date with their news</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="six columns">
+            <a class="u-full-width button" href="">
+                <i class="glyph-login"></i> Login
+            </a>
+        </div>
+
+        <div class="six columns">
+            <a class="u-full-width button button-primary" href="">
+                <i class="glyph-lock-open"></i> Sign up
+            </a>
+        </div>
+    </div>
+{% endblock %}

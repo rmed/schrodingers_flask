@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}Nyanter{% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/skeleton.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/entypo.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <header>
+        <div id="logo" class="u-pull-left">
+            {# TODO #}
+            <a href="">
+                <img src="">
+                Nyanter
+            </a>
+        </div>
+
+        <div id="header-links" class="u-pull-right">
+                {# TODO #}
+                <a href="">
+                    <i class="glyph-rss"></i> Nyanboard
+                </a>
+
+                <a href="">
+                    <i class="glyph-network"></i> Nyanters
+                </a>
+
+                <a href="">
+                    <i class="glyph-user"></i> My profile
+                </a>
+
+                <a href="">
+                    <i class="glyph-logout"></i> Logout
+                </a>
+
+                <a href="">
+                    <i class="glyph-login"></i> Login
+                </a>
+
+        </div>
+    </header>
+
+    <div class="container">
+        {% block content %}
+            nyaaa
+        {% endblock %}
+    </div>
+
+    <footer></footer>
+</body>
+</html>

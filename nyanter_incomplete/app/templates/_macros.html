@@ -1,0 +1,38 @@
+{# Show user information and some options #}
+{% macro profile_header(user, is_following) %}
+    <div class="row">
+        <div class="three columns">
+            <img id="profile-pic" src="" alt="user picture">
+        </div>
+
+        <div class="seven columns">
+            <h2 id="profile-name">TODO</h2>
+        </div>
+
+        <div id="profile-opts" class="two columns">
+
+            {# Owner, show options #}
+            <a class="button button-primary u-full-width" href="">
+                <i class="glyph-sound"></i> Nya!!!
+            </a>
+
+            <a class="button u-full-width" href="">
+                <i class="glyph-pencil"></i> Edit
+            </a>
+
+            <a class="button u-full-width" href="">
+                <i class="glyph-users"></i> Sub List
+            </a>
+
+            {# Not the owner, may subscribe #}
+            <a class="button u-full-width" href="">
+
+                {# Check status #}
+                    <i class="glyph-tag"></i> Follow
+                    <i class="glyph-cancel"></i> Unfollow
+            </a>
+        </div>
+    </div>
+
+    <hr/>
+{% endmacro %}
