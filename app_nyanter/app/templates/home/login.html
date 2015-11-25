@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}Nyanter | Login{% endblock %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="row">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form name="login_form" method="POST" action="{{ url_for('home.login') }}">
+        <div class="row">
+            <div class="two columns">
+                <label for="username"><i class="glyph-user"></i> Username</label>
+            </div>
+
+            <div class="ten columns">
+                <input id="username" class="u-full-width" type="text" value="" name="username"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="two columns">
+                <label for="password"><i class="glyph-lock"></i> Password</label>
+            </div>
+
+            <div class="ten columns">
+                <input id="password" class="u-full-width" type="password" value="" name="password"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="six columns offset-by-three">
+                <input id="submit" class="button button-primary u-full-width" type="submit" name="submit" value="Sign up"/>
+            </div>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% from "_macros.html" import profile_header %}
+
+{% block title %}Nyanter | {{ user.username }}{% endblock %}
+
+{% block content %}
+
+    {{ profile_header(user, is_following) }}
+
+    <div class="row">
+        <div class="six columns">
+            <a class="button u-full-width" href="{{ url_for('profile.subscriptions') }}">
+                <i class="glyph-archive"></i> Subscriptions
+            </a>
+        </div>
+
+        <div class="six columns">
+            <a class="button u-full-width" href="{{ url_for('profile.subscribers') }}">
+                <i class="glyph-megaphone"></i> Followers
+            </a>
+        </div>
+    </div>
+
+    <h3>{{ title }}</h3>
+
+    {% if subs is not defined %}
+        {# No subs #}
+        No <i>subs</i> to show.
+
+    {% else %}
+
+        {# Show subs #}
+
+        {% for sub in subs %}
+            <article class="row nya-card">
+                <div class="one column">
+                    <img class="nya-pic" src="{{ url_for('fserver.profile_pic', user_id=sub.id) }}" alt="user picture">
+                </div>
+
+                <div class="eleven columns">
+                    <a class="uname" href="{{ url_for('profile.show', username=sub.username)}}">
+                        {{ sub.username }}
+                    </a>
+                </div>
+            </article>
+        {% endfor %}
+
+        <div class="row">
+            <div class="twelve rows">
+                {% if page > 1 %}
+                    <a class="u-pull-left pagination-ctrl" href="./?page={{ page - 1}}">
+                        <i class="glyph-left"></i> Previous page
+                    </a>
+                {% endif %}
+
+                {% if page < pagination.get_page_count() %}
+                    <a class="u-pull-right pagination-ctrl" href="./?page={{ page + 1}}">
+                        Next page <i class="glyph-right"></i>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+
+    {% endif %}
+{% endblock %}

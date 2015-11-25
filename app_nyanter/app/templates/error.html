@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}Error {{ error_code }}{% endblock %}
+{% block section_name %}.error?{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="twelve columns">
+            <h2>
+                {% if error_msg is defined %}
+                    {{ error_msg}}
+                {% else %}
+                    Error: Error not found!?
+                {% endif %}
+            </h2>
+            <hr></hr>
+        </div>
+    </div>
+
+{% endblock %}

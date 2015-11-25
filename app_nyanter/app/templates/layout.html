@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}Nyanter{% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/skeleton.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/entypo.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <header>
+        <div id="logo" class="u-pull-left">
+            <a href="{{ url_for('home.index') }}">
+                <img src="{{ url_for('static', filename='img/logo.png') }}">
+                Nyanter
+            </a>
+        </div>
+
+        <div id="header-links" class="u-pull-right">
+            {% if session.get('logged_in', False) %}
+
+                <a href="{{ url_for('board.nyanboard') }}">
+                    <i class="glyph-rss"></i> Nyanboard
+                </a>
+
+                <a href="{{ url_for('board.nyanters') }}">
+                    <i class="glyph-network"></i> Nyanters
+                </a>
+
+                <a href="{{ url_for('profile.show') }}">
+                    <i class="glyph-user"></i> My profile
+                </a>
+
+                <a href="{{ url_for('home.logout') }}">
+                    <i class="glyph-logout"></i> Logout
+                </a>
+
+            {% else %}
+
+                <a href="{{ url_for('home.login') }}">
+                    <i class="glyph-login"></i> Login
+                </a>
+
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="container">
+        {% block content %}
+            nyaaa
+        {% endblock %}
+    </div>
+
+    <footer></footer>
+</body>
+</html>

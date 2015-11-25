@@ -1,0 +1,139 @@
+header {
+    margin-bottom: 20px;
+    min-height: 50px;
+}
+
+header #logo {
+    font-size: 3rem;
+    margin-left: 20px;
+    opacity: 0.5;
+    transition: all 500ms ease;
+}
+
+header #logo:hover {
+    opacity: 0.7;
+    transition: all 500ms ease;
+}
+
+header #logo img {
+    max-height: 25px;
+    max-width: 25px;
+}
+
+header #logo a,
+header #logo a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+header #header-links {
+    display: inline-block;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+header #header-links a,
+header #header-links a:visited {
+    color: black;
+    display: inline-block;
+    margin-left: 10px;
+    opacity: 0.5;
+    text-decoration: none;
+    transition: all 500ms ease;
+}
+
+header #header-links a:hover {
+    opacity: 1;
+    transition: all 500ms ease;
+}
+
+.info-card {
+    opacity: 0.5;
+    padding: 5px;
+    text-align: center;
+    transition: all 500ms ease;
+}
+
+.info-card:hover {
+    opacity: 1;
+    transition: all 500ms ease;
+}
+
+.info-card h3 {
+    border-bottom: 1px solid gray;
+}
+
+#profile-pic {
+    max-height: 150px;
+    max-width: 150px;
+}
+
+#profile-name,
+#profile-opts{
+    padding-top: 30px;
+}
+
+.nya-card {
+    border: 1px solid #d8d8d8;
+    background-color: #f8f8f8;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    box-shadow: 0px 10px 15px #cccccc;
+}
+
+.nya-card a.uname,
+.nya-card a.uname:visited {
+    color: black;
+    /* float: left; */
+    font-style: italic;
+    font-size: 3rem;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all 500ms ease;
+}
+
+.nya-card a.uname:hover {
+    opacity: 1;
+    transition: all 500ms ease;
+}
+
+.nya-card .date {
+    color: gray;
+    float: right;
+}
+
+.nya-card .message {
+    clear: both;
+    margin-top: 10px;
+}
+
+a.pagination-ctrl,
+a.pagination-ctrl:visited {
+    color: black;
+    opacity: 0.6;
+    transition: all 500ms ease;
+    text-decoration: none;
+}
+
+a.pagination-ctrl:hover {
+    opacity: 1;
+    transition: all 500ms ease;
+}
+
+#nya-message {
+    min-height: 150px;
+}
+
+.nya-pic {
+    display: block;
+    max-width: 50px;
+}
+
+/* Center text in buttons */
+.button {
+    padding: 0;
+}
+
+footer {
+    min-height: 150px;
+}

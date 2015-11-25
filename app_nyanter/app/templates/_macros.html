@@ -1,0 +1,43 @@
+{# Show user information and some options #}
+{% macro profile_header(user, is_following) %}
+    <div class="row">
+        <div class="three columns">
+            <img id="profile-pic" src="{{ url_for('fserver.profile_pic', user_id=user.id) }}" alt="user picture">
+        </div>
+
+        <div class="seven columns">
+            <h2 id="profile-name">{{ user.username }}</h2>
+        </div>
+
+        <div id="profile-opts" class="two columns">
+        {% if session.get('user', None) == user.username %}
+            {# Owner, show options #}
+            <a class="button button-primary u-full-width" href="{{ url_for('profile.new_nya') }}">
+                <i class="glyph-sound"></i> Nya!!!
+            </a>
+
+            <a class="button u-full-width" href="{{ url_for('profile.edit') }}">
+                <i class="glyph-pencil"></i> Edit
+            </a>
+
+            <a class="button u-full-width" href="{{ url_for('profile.subscriptions') }}">
+                <i class="glyph-users"></i> Sub List
+            </a>
+
+        {% else %}
+            {# Not the owner, may subscribe #}
+            <a class="button u-full-width" href="{{ url_for('profile.toggle_follow', username=user.username) }}">
+
+                {# Check status #}
+                {% if not is_following %}
+                    <i class="glyph-tag"></i> Follow
+                {% else %}
+                    <i class="glyph-cancel"></i> Unfollow
+                {% endif %}
+            </a>
+        {% endif %}
+        </div>
+    </div>
+
+    <hr/>
+{% endmacro %}

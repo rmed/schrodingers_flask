@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}Nyanter | Signup{% endblock %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="row">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form name="nya_form" method="POST" action="{{ url_for('profile.new_nya') }}">
+        <div class="row">
+            <div class="twelve columns">
+                <label for="message"><i class="glyph-chat"></i> Message</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="twelve columns">
+                <textarea id="nya-message" class="u-full-width" maxlength="160" name="message"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="six columns offset-by-three">
+                <input id="submit" class="button button-primary u-full-width" type="submit" name="submit" value="Nya!!!"/>
+            </div>
+        </div>
+    </form>
+{% endblock %}
